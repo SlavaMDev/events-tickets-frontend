@@ -21,18 +21,19 @@ const RegistrationForm = () => {
   const { loading } = useSelector((state: { auth: AuthState }) => state.auth);
   const navigate = useNavigate();
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: any) => { // TODO implement types
     setForm({ ...form, [e.target.name]: e.target.value });
   };
-  const handleCheck = (e: any) => {
+  const handleCheck = (e: any) => { // TODO implement types
     setForm({ ...form, [e.target.name]: e.target.checked });
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: any) => { // TODO implement types
     e.preventDefault();
     if (confirmPass === form.password) {
       setConfirmError('');
       // @ts-ignore
+      // TODO implement types
       dispatch(registerUser(form));
       navigate('/');
     } else {

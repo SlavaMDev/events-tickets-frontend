@@ -16,13 +16,14 @@ const LoginForm = () => {
   const { loading, error } = useSelector((state: { auth: AuthState }) => state.auth);
   const navigate = useNavigate();
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: any) => { // TODO implement types
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: any) => { // TODO implement types
     e.preventDefault();
     // @ts-ignore
+    // TODO implement types
     dispatch(loginUser(form));
     navigate('/');
   };

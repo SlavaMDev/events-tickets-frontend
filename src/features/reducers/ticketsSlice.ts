@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { getTickets } from '../../service/tickets.service.ts';
 
 export type TicketsState = {
-  tickets: any,
+  tickets: any, // TODO implement types
   loading: boolean,
   error: Error,
   page: number,
@@ -21,6 +21,7 @@ export const loadTickets = createAsyncThunk(
     try {
       const response = await getTickets(userType, page, query);
       return await response.data;
+      // TODO implement types
     } catch (error: any) {
       return rejectWithValue(error.message || error);
     }
@@ -52,6 +53,7 @@ const ticketsSlice = createSlice({
       .addCase(loadTickets.rejected, (state, action) => {
         state.loading = false;
         // @ts-ignore
+        // TODO implement types
         state.error = action.payload;
       });
 

@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { login, registration } from '../../service/auth.service.ts';
 
 export type AuthState = {
-  user: any,
+  user: any, // TODO implement types
   loading: boolean,
   error: Error,
 }
@@ -31,6 +31,7 @@ export const registerUser = createAsyncThunk(
       return data.user; // Returns data.user
     } catch (error) {
       // @ts-ignore
+      // TODO implement types
       return rejectWithValue(error.message || error);
     }
   }
@@ -47,6 +48,7 @@ export const loginUser = createAsyncThunk(
       return data.user; // Returns data.user
     } catch (error) {
       // @ts-ignore
+      // TODO implement types
       return rejectWithValue(error.message || error);
     }
   }
@@ -77,6 +79,7 @@ const authSlice = createSlice({
       .addCase(registerUser.rejected, (state, action) => {
         state.loading = false;
         // @ts-ignore
+        // TODO implement types
         state.error = action.payload;
       })
       .addCase(loginUser.pending, (state) => {
@@ -90,6 +93,7 @@ const authSlice = createSlice({
       .addCase(loginUser.rejected, (state, action) => {
         state.loading = false;
         // @ts-ignore
+        // TODO implement types
         state.error = action.payload;
       });
 

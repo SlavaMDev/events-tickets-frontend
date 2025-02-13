@@ -17,16 +17,19 @@ const HomePage = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     // @ts-ignore
+    // TODO implement types
     dispatch(loadTickets({ userType: user.type }));
   }, []);
 
-  const nextPage = (_e: any, nextPage: number) => {
+  const nextPage = (_e: any, nextPage: number) => { // TODO implement types
     // @ts-ignore
+    // TODO implement types
     dispatch(loadTickets({ userType: user.type, page: nextPage }));
   }
 
   const onSearch = () => {
     // @ts-ignore
+    // TODO implement types
     dispatch(loadTickets({ userType: user.type, page: 1, query }));
   }
 
@@ -60,7 +63,7 @@ const HomePage = () => {
         user.type === 'local' ? (
           <Grid container spacing={2}>
             {
-              list?.map((ticket: any) =>
+              list?.map((ticket: any) => // TODO implement types
                 <Grid item key={ticket._id} xs={4}>
                   <TicketCard
                     date={ticket.createdAt}
@@ -76,7 +79,7 @@ const HomePage = () => {
         ) : (
           <>
             {
-              list?.map((ticket: any) =>
+              list?.map((ticket: any) => // TODO implement types
                 <TicketCard
                   key={ticket._id}
                   date={ticket.createdAt}
