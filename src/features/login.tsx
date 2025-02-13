@@ -20,12 +20,18 @@ const LoginForm = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: any) => { // TODO implement types
+  const handleSubmit = async (e: any) => { // TODO implement types
     e.preventDefault();
-    // @ts-ignore
-    // TODO implement types
-    dispatch(loginUser(form));
-    navigate('/');
+    try {
+      // @ts-ignores
+      // TODO implement types
+      const action = await dispatch(loginUser(form));
+      if (loginUser.fulfilled.match(action)) {
+        navigate('/');
+      }
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (
