@@ -26,3 +26,11 @@ Follow these steps to set up the project locally:
 
 5. **Enjoy! 🎉**
 
+### 🧪 Testing the App
+### Application runs in the following port `3000`
+To test the application, follow these steps:
+
+1. **Login as a Tourist**
+   - **Email:** `tourist@email.com`
+2. **Login as a Local**
+   - **Email:** `local@email.com`

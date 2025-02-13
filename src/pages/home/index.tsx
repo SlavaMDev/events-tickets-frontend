@@ -13,9 +13,10 @@ import { AuthState } from '../../features/reducers/authSlice.ts';
 
 const HomePage = () => {
   const auth = useSelector((state: { auth: AuthState;  }) => state.auth);
+  const { user } = auth;
   return (
     <>
-      <Header />
+      <Header user={user} />
       <Container maxWidth="sm">
         {
           auth.user ? (
@@ -27,8 +28,7 @@ const HomePage = () => {
                   <Typography>Enter for checking our events</Typography>
                 </CardContent>
                 <CardActions>
-                  <Button size="small"><Link to="/login">Login</Link></Button>
-                  <Button size="small"><Link to="/registration">Registration</Link></Button>
+                  <Button size="small"><Link to="/login" style={{ textDecoration: 'none' }}>Login</Link></Button>
                 </CardActions>
               </Card>
             </Box>

@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import { loginUser, AuthState, UserLoginData } from './reducers/authSlice.ts';
 import { useDispatch, useSelector } from "react-redux";
 
-const defaultState: UserLoginData = { email: '', password: '' };
+const defaultState: UserLoginData = { email: '' };
 
 const LoginForm = () => {
   const [form, setForm] = useState(defaultState);
@@ -47,20 +47,6 @@ const LoginForm = () => {
               placeholder="Email"
               onChange={handleChange}
               value={form.email}
-            />
-          </Grid>
-
-          <Grid item xs={12}>
-            <TextField
-              label="Password"
-              type="password"
-              variant="outlined"
-              fullWidth
-              required
-              name="password"
-              placeholder="Password"
-              onChange={handleChange}
-              value={form.password}
             />
           </Grid>
 
